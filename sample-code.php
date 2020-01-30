@@ -5,10 +5,9 @@
 <header>
 <title>Sample Code</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta content="Anvi Industry, Palus, Maharashtra Steel, 416310, Sangli, Maharashtra, India, Kuldip Gavli" name="description" />
-<meta content="Anvi-Industry" name="Anvi-Industry" />
+<meta content="Sample Code" name="description" />
+<meta content="Sample Code" name="Sample Code" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="images/newlogo.jpg" />
 <link
 	rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,46 +20,67 @@
 			  src="https://code.jquery.com/jquery-3.4.1.min.js"
 			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 			  crossorigin="anonymous"></script>
-              <script type="application/javascript">
+<script type="application/javascript">
+    $(document).ready(function() {
+    $('#comboCountry').select2();
+    $('#comboState').select2();
 
-$(document).ready(function() {
-    $('#sample-test').select2();
+    getCountries();
 });
+
+function getCountries()
+{
+    $.ajax(
+        {
+            url: "get-all-countries.php",
+            type: 'GET',
+            dataType:'json',
+            success: function(data)
+            {
+                $.each(data, function(index)
+                {
+                    var newOption = new Option(data[index].text, data[index].id, false, false);
+                    $('#comboCountry').append(newOption);
+                });
+            },
+            error : function(request,error)
+            {}
+        }
+    );
+}
+
+function getStates()
+{
+    var cid = document.getElementById("comboCountry");
+    document.getElementById("comboState").length = 0;
+    $.ajax(
+        {
+            url: "get-all-states-by-country.php",
+            type: 'GET',
+            data :
+                {
+                    'country_id' : cid.value
+                },
+            dataType:'json',
+            success: function(data)
+            {
+                $.each(data, function(index)
+                {
+                    var newOption = new Option(data[index].text, data[index].id, false, false);
+                    $('#comboState').append(newOption).trigger('change.select2');
+                });
+            },
+            error : function(request,error)
+            {}
+        }
+    );
+}
+
 </script>
 </header>
 <body>
 <!-- PHP Code Start -->
-<?php
-    if (isset($_POST['submit']))
-    {
-        print_r($_POST);
-        
-        extract($_POST);
 
-        include 'dbconnection.php';
-        
-        echo $sql = "insert into uuser(name, mobile, email, position, address) values 
-        ('$txtUname', '$txtMobile', '$txtEmail', '$txtPosition', '$txtAddress')";
-        $result = mysqli_query($db, $sql);
-        if($result)
-        {
-            ?>
-                <script language="javascript">
-                    alert("Value Inserted");
-                </script>
-            <?php
-        }
-        else
-        {
-            ?>
-                <script language="javascript">
-                    alert("Please try again");
-                </script>
-            <?php
-        }
-       
-    }
-?>
 <!-- PHP Code End -->
 
 <div class="container">
@@ -69,60 +89,21 @@ $(document).ready(function() {
         <form method="post" action="<?php echo $_SERVER["PHP_SELF"] ;?>">
             <div class="card">
                 <div class="card-header">
-                User Details
+                Sample Testing of Web Service using select2
                 </div>
                 <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
-                    <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">Name</label>
-                        <div class="col-lg-8">
-                        <input type="text" id="txtUname" name="txtUname" class="form-control"
-                                placeholder="User Name" required/>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">Mobile</label>
-                        <div class="col-lg-8">
-                        <input type="text" id="txtMobile" name="txtMobile" class="form-control"
-                                placeholder="Mobile Number" required/>
-                        </div>
-                    </div>
                         <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">Email</label>
-                        <div class="col-lg-8">
-                        <input type="text" id="txtEmail" name="txtEmail" class="form-control"
-                                placeholder="Email" required/>
+                            <label class="col-lg-4 col-form-label text-right">Country</label>
+                            <select id="comboCountry" name="comboCountry" class="col-lg-8 text-right" data-placeholder="Select Country" onchange="getStates()">
+                            </select>
                         </div>
-                    </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">Position</label>
-                        <div class="col-lg-8">
-                        <input type="text" id="txtPosition" name="txtPosition" class="form-control"
-                                placeholder="Position" required/>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label text-right">State</label>
+                            <select id="comboState" class="col-lg-8 text-right" name="comboState" data-placeholder="Select State">
+                            </select>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">Address</label>
-                        <div class="col-lg-8">
-                            <textarea class="common-textarea form-control" name="txtAddress" placeholder="Enter Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter address'" required=""></textarea>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-lg-4 col-form-label text-right">States</label>
-                            <div class="col-lg-8">
-                                <select  id='sample-test' name="state">
-                                    <option value="MH">Maharashtra</option>
-                                    <option value="DL">Delhi</option>
-                                </select>
-                            </div>   
-                    </div>
-                    <div class="form-group mb-0 text-center">
-                        <button class="btn btn-warning" type="submit" name="submit"> Submit </button>
-                    </div>
                     </div>
                 </div>
             </div>
