@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5aa7507-eaa2-442c-9cac-dc104ee3914a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get-all-countries.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/get-all-states-by-country.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkpass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample-code.php" beforeDir="false" afterPath="$PROJECT_DIR$/sample-code.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +16,11 @@
     </execution>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="anilrajole &lt;rajoleanil75@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -40,6 +42,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/database" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Sample-Demo\database" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -63,7 +70,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580384406771</updated>
-      <workItem from="1580384410728" duration="1892000" />
+      <workItem from="1580384410728" duration="2013000" />
+      <workItem from="1580452496065" duration="14000" />
+      <workItem from="1580455785741" duration="1870000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1580384518989</created>
@@ -72,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580384518989</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Select2 Demo Ready">
+      <created>1580386362967</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580386362967</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,24 +96,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="Select2 Demo Ready" />
+    <option name="LAST_COMMIT_MESSAGE" value="Select2 Demo Ready" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580384516325">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580386361612">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1580384516325" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1580386361612" />
     <state x="513" y="184" key="NewPhpClassDialog" timestamp="1580385224461">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="513" y="184" key="NewPhpClassDialog/0.0.1366.738@0.0.1366.738" timestamp="1580385224461" />
-    <state x="517" y="293" key="NewPhpFileDialog" timestamp="1580385322567">
+    <state x="517" y="293" key="NewPhpFileDialog" timestamp="1580455859428">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="517" y="293" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1580385322567" />
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1580384772574">
+    <state x="517" y="293" key="NewPhpFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1580455859428" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2" timestamp="1580386409369">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1580384772574" />
+    <state x="275" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1580386409369" />
   </component>
 </project>
