@@ -1,5 +1,5 @@
 <?php
-	$db=mysqli_connect("localhost","root","","test", "3333");
+	$db=mysqli_connect("192.168.0.101","stn","root","test", "3306");
 
 	if(!$db)
 	{
